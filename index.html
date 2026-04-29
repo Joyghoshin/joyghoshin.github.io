@@ -106,7 +106,7 @@
   .hero-grid {
     position: absolute;
     inset: 0;
-    background-image:
+    background-image: 
       linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
     background-size: 60px 60px;
@@ -180,6 +180,7 @@
     transition: transform .2s, box-shadow .2s;
     cursor: pointer;
     border: none;
+    display: inline-block;
   }
   .btn:hover { transform: translateY(-2px); }
   .btn-primary {
@@ -461,28 +462,27 @@
     transform: translateX(6px);
     transition: opacity .2s, transform .2s;
   }
-  .chat-fab:hover + .chat-fab-label,
-  .chat-fab-label.show { opacity: 1; transform: translateX(0); }
+  .chat-fab:hover + .chat-fab-label { opacity: 1; transform: translateX(0); }
 
   /* AI Twin overlay panel */
   .twin-overlay {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 560px;
-  height: 720px;
-  max-width: calc(100vw - 24px);
-  max-height: calc(100vh - 110px);
-  border-radius: 18px;
-  overflow: hidden;
-  display: none;
-  z-index: 9997;
-  box-shadow: 0 24px 64px rgba(0,0,0,.8), 0 0 0 1px rgba(0,210,255,.25);
-  border: 1px solid rgba(0,210,255,.3);
-  flex-direction: column;
-  background: var(--surface);
-  animation: popIn .25s ease;
-}
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 560px;
+    height: 720px;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 110px);
+    border-radius: 18px;
+    overflow: hidden;
+    display: none;
+    z-index: 9997;
+    box-shadow: 0 24px 64px rgba(0,0,0,.8), 0 0 0 1px rgba(0,210,255,.25);
+    border: 1px solid rgba(0,210,255,.3);
+    flex-direction: column;
+    background: var(--surface);
+    animation: popIn .25s ease;
+  }
   @keyframes popIn {
     from { opacity: 0; transform: scale(.95) translateY(12px); }
     to   { opacity: 1; transform: scale(1) translateY(0); }
@@ -512,9 +512,9 @@
   .twin-ov-ext {
     background: rgba(255,255,255,.15);
     border: none; color: #fff;
-    width: 28px; height: 28px;
+    padding: 4px 10px;
     border-radius: 6px;
-    cursor: pointer; font-size: .85em;
+    cursor: pointer; font-size: .72rem;
     display: flex; align-items: center; justify-content: center;
     text-decoration: none;
     transition: background .2s;
@@ -530,22 +530,18 @@
   }
 
   .twin-ov-body {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  min-height: 0;
-}
-.twin-ov-body iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
   .twin-ov-body iframe {
-    width: 100%; height: 100%;
-    border: none; display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
   }
   .twin-ov-loading {
     position: absolute; inset: 0;
@@ -556,35 +552,13 @@
     transition: opacity .4s;
   }
   .twin-ov-loading.hidden { opacity: 0; pointer-events: none; }
-  .twin-ov-loading p { color: var(--muted); font-size: .84em; }
+  .twin-ov-loading p { color: var(--muted); font-size: .84em; text-align: center; }
   .twin-spin {
     width: 36px; height: 36px;
     border: 3px solid var(--border);
     border-top-color: var(--accent);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
-  }
-
-  /* Mobile: full-screen-ish overlay */
-  @media (max-width: 768px) {
-  .twin-overlay {
-    position: fixed;
-    inset: 0;
-    bottom: 0 !important;
-    right: 0 !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-    border-radius: 0 !important;
-    z-index: 99999;
-  }
-  .chat-fab { bottom: 16px; right: 16px; }
-  .chat-fab-label { display: none; }
-}
-    .chat-fab-label { display: none; }
   }
 
   /* ─── LIVE DEMO ─── */
@@ -637,7 +611,6 @@
   .demo-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #28c840; animation: pulse-dot 1.5s infinite; display: inline-block; margin-right: 2px; }
   @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.7); } }
 
-  /* Launch card — shown before user clicks */
   .demo-launch-card {
     padding: 52px 32px;
     text-align: center;
@@ -782,6 +755,17 @@
       border-radius: 18px 18px 0 0;
       border-bottom: none;
     }
+    .twin-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: 100vw !important;
+      max-height: 100vh !important;
+      border-radius: 0 !important;
+      z-index: 99999;
+    }
+    .chat-fab-label { display: none; }
   }
 
   /* ─── SHARED SPINNER ─── */
@@ -802,7 +786,6 @@
     .nav-links.open { display: flex; }
     .hamburger { display: flex; }
     .about-grid { grid-template-columns: 1fr; }
-    .chat-overlay { width: calc(100vw - 32px); right: 16px; bottom: 88px; height: 70vh; }
     .contact-wrapper { padding: 36px 20px; }
   }
 
@@ -810,21 +793,10 @@
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Twin overlay improvements */
-.twin-ov-actions { display: flex; align-items: center; gap: 6px; }
-.twin-ov-loading {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  background: var(--surface); z-index: 2;
-  color: var(--text-muted); gap: .5rem;
-}
-
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">JG</div>
   <ul class="nav-links" id="navLinks">
@@ -841,7 +813,6 @@
   </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -854,15 +825,14 @@
     </div>
     <p class="hero-tagline">"I don't just define products — I build them."</p>
     <div class="hero-links">
-      <a href="https://www.linkedin.com/in/joy-g-b11844242" target="_blank" class="btn btn-primary">LinkedIn</a>
-      <a href="https://github.com/Joyghoshin" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      <a href="https://www.linkedin.com/in/joy-g-b11844242" target="_blank" class="btn btn-outline">LinkedIn</a>
       <a href="https://topmate.io/joy_ghosh" target="_blank" class="btn btn-outline">Topmate</a>
-      <a href="mailto:joyghoshin@gmail.com" class="btn btn-outline">Email Me</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <p class="section-label">Who I Am</p>
@@ -896,7 +866,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
     <p class="section-label">Career</p>
@@ -911,7 +880,7 @@
           </div>
           <div class="exp-date">Current</div>
         </div>
-        <p class="exp-desc">Driving digital transformation for enterprise clients by owning end-to-end product lifecycle — from discovery and stakeholder alignment to sprint planning and delivery. Actively contributing to engineering through prototyping and technical spec writing.</p>
+        <p class="exp-desc">Driving digital transformation for enterprise clients by owning end-to-end product lifecycle — from discovery and stakeholder alignment to sprint planning and delivery.</p>
         <div class="exp-tags">
           <span class="tag">Product Strategy</span>
           <span class="tag">Agile / Scrum</span>
@@ -920,27 +889,10 @@
           <span class="tag">AI Integration</span>
         </div>
       </div>
-      <div class="timeline-item reveal">
-        <div class="exp-header">
-          <div>
-            <div class="exp-title">Product Intern / Early Career</div>
-            <div class="exp-company">Previous Experience</div>
-          </div>
-          <div class="exp-date">Prior</div>
-        </div>
-        <p class="exp-desc">Built foundational PM skills through hands-on product work — user research, competitive analysis, and feature scoping. Developed a habit of learning by shipping: side projects became the best classroom.</p>
-        <div class="exp-tags">
-          <span class="tag">User Research</span>
-          <span class="tag">Wireframing</span>
-          <span class="tag">A/B Testing</span>
-          <span class="tag">Analytics</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <p class="section-label">What I've Built</p>
@@ -951,42 +903,29 @@
         <div class="project-icon">🤖</div>
         <div class="project-title">AI-Powered Portfolio</div>
         <p class="project-desc">This very site — a custom-coded portfolio with an embedded AI chat widget to let visitors ask me anything. Built from scratch without a template.</p>
-        <div class="exp-tags" style="margin-bottom:14px">
-          <span class="tag">HTML/CSS/JS</span><span class="tag">Anthropic API</span>
-        </div>
         <a href="https://github.com/Joyghoshin" target="_blank" class="project-link">View on GitHub →</a>
       </div>
       <div class="project-card reveal">
         <div class="project-icon">📦</div>
         <div class="project-title">Product Experiments</div>
         <p class="project-desc">A collection of vibe-coded experiments and rapid prototypes exploring new product ideas, AI tooling, and developer workflows.</p>
-        <div class="exp-tags" style="margin-bottom:14px">
-          <span class="tag">Rapid Prototyping</span><span class="tag">Side Projects</span>
-        </div>
         <a href="https://github.com/Joyghoshin" target="_blank" class="project-link">Explore GitHub →</a>
       </div>
       <div class="project-card reveal">
         <div class="project-icon">🎙️</div>
         <div class="project-title">PM Mentorship on Topmate</div>
         <p class="project-desc">Mentoring aspiring and early-career product managers on breaking into the industry, building portfolios, and leveling up their craft.</p>
-        <div class="exp-tags" style="margin-bottom:14px">
-          <span class="tag">Mentorship</span><span class="tag">Community</span>
-        </div>
         <a href="https://topmate.io/joy_ghosh" target="_blank" class="project-link">Book a Session →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LIVE DEMO -->
 <section id="live-demo">
   <div class="container">
     <p class="section-label">Try It Live</p>
     <h2 class="section-title">SkyBot — Airline AI Assistant</h2>
     <div class="section-divider"></div>
-    <p style="color:var(--muted);margin-bottom:32px;max-width:620px;font-size:.95em;">
-      A fully functional AI-powered airline assistant built and deployed on Hugging Face Spaces. Ask it about flights, bookings, baggage policies — anything airline-related.
-    </p>
     <div class="demo-wrapper reveal">
       <div class="demo-header">
         <div class="demo-header-left">
@@ -999,49 +938,34 @@
         </div>
         <div class="demo-badge">Live on Hugging Face</div>
       </div>
-      <!-- Launch card — iframe loads only after click -->
       <div class="demo-launch-card">
         <div class="demo-plane-icon">✈️</div>
         <h3>SkyBot is ready for takeoff</h3>
-        <p>An AI airline assistant that handles flight queries, baggage rules, booking help and more — powered by an LLM and deployed on HF Spaces.</p>
+        <p>An AI airline assistant that handles flight queries, baggage rules, booking help and more.</p>
         <button class="demo-launch-btn" id="skybotLaunchBtn">
           🚀 Launch SkyBot Demo
         </button>
-      </div>
-      <div class="demo-cta">
-        <p>Built with <span>Gradio · LLM · Hugging Face</span> — by Joy Ghosh</p>
-        <a href="https://huggingface.co/spaces/joyghoshin/skybot-airline-assistant" target="_blank" class="btn btn-outline" style="font-size:.82em;padding:7px 18px;">Open on HF ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKYBOT MODAL (opens on button click) -->
 <div class="skybot-modal" id="skybotModal">
   <div class="skybot-modal-inner">
     <div class="skybot-modal-header">
       <span>✈️ SkyBot — Airline AI Assistant</span>
-      <div class="skybot-modal-actions">
-        <a href="https://huggingface.co/spaces/joyghoshin/skybot-airline-assistant" target="_blank" class="skybot-modal-ext">Open in HF ↗</a>
-        <button class="skybot-modal-close" id="skybotModalClose">✕</button>
-      </div>
+      <button class="skybot-modal-close" id="skybotModalClose">✕</button>
     </div>
     <div class="skybot-modal-body">
       <div class="skybot-modal-loading" id="skybotModalLoading">
         <div class="spin"></div>
         <p>Spinning up SkyBot… takes a few seconds ✈️</p>
       </div>
-      <iframe
-        id="skybotIframe"
-        title="SkyBot — Airline AI Assistant"
-        allow="microphone"
-        style="width:100%;height:100%;border:none;display:block;"
-      ></iframe>
+      <iframe id="skybotIframe" title="SkyBot" allow="microphone"></iframe>
     </div>
   </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <p class="section-label">Toolkit</p>
@@ -1053,9 +977,6 @@
         <div class="skill-pill-list">
           <span class="skill-pill">Roadmapping</span>
           <span class="skill-pill">PRD Writing</span>
-          <span class="skill-pill">OKRs</span>
-          <span class="skill-pill">User Stories</span>
-          <span class="skill-pill">A/B Testing</span>
           <span class="skill-pill">Discovery</span>
         </div>
       </div>
@@ -1063,70 +984,14 @@
         <div class="skill-group-title">⚙️ Technical</div>
         <div class="skill-pill-list">
           <span class="skill-pill">HTML/CSS/JS</span>
-          <span class="skill-pill">React</span>
           <span class="skill-pill">Python</span>
-          <span class="skill-pill">REST APIs</span>
-          <span class="skill-pill">Git / GitHub</span>
-          <span class="skill-pill">Vibe Coding</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <div class="skill-group-title">🤖 AI & Tools</div>
-        <div class="skill-pill-list">
-          <span class="skill-pill">Anthropic API</span>
-          <span class="skill-pill">Prompt Engineering</span>
-          <span class="skill-pill">MCP Integrations</span>
-          <span class="skill-pill">Claude</span>
-          <span class="skill-pill">LLM Workflows</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <div class="skill-group-title">🤝 Collaboration</div>
-        <div class="skill-pill-list">
-          <span class="skill-pill">Agile / Scrum</span>
-          <span class="skill-pill">JIRA</span>
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">Notion</span>
-          <span class="skill-pill">Stakeholder Mgmt</span>
+          <span class="skill-pill">Git</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <p class="section-label">Background</p>
-    <h2 class="section-title">Education</h2>
-    <div class="section-divider"></div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-degree">Bachelor's Degree</div>
-        <div class="edu-school">Engineering / Technology</div>
-        <div class="edu-year">Foundation for Systems Thinking</div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-icon">📜</div>
-        <div class="edu-degree">Product Management</div>
-        <div class="edu-school">Self-taught + On-the-job</div>
-        <div class="edu-year">Continuous learner</div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-icon">💻</div>
-        <div class="edu-degree">Vibe Coding</div>
-        <div class="edu-school">GitHub + Side Projects</div>
-        <div class="edu-year">Always building</div>
-      </div>
-    </div>
-    <p style="color:var(--muted);font-size:.85em;margin-top:20px;font-style:italic;">
-      ✏️ <a href="mailto:joyghoshin@gmail.com" style="color:var(--accent);">Drop me an email</a> to get the full picture — happy to share more details directly.
-    </p>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <p class="section-label">Let's Connect</p>
@@ -1134,54 +999,40 @@
     <div class="section-divider"></div>
     <div class="contact-wrapper reveal">
       <h3>Let's build something together.</h3>
-      <p>Whether you want to chat product strategy, collaborate on a project, book a mentorship session, or just geek out about AI — my inbox is always open.</p>
       <div class="contact-links">
         <a href="mailto:joyghoshin@gmail.com" class="btn btn-primary">📧 Email Me</a>
         <a href="https://www.linkedin.com/in/joy-g-b11844242" target="_blank" class="btn btn-outline">LinkedIn</a>
         <a href="https://topmate.io/joy_ghosh" target="_blank" class="btn btn-outline">Book on Topmate</a>
-        <a href="https://github.com/Joyghoshin" target="_blank" class="btn btn-outline">GitHub</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>Built with ❤️ by <a href="https://github.com/Joyghoshin">Joy Ghosh</a> &nbsp;·&nbsp; PM who builds &nbsp;·&nbsp; 2025</p>
+  <p>Built with ❤️ by <a href="https://github.com/Joyghoshin">Joy Ghosh</a> &nbsp;·&nbsp; 2025</p>
 </footer>
 
-<!-- AI TWIN FAB -->
-<button class="chat-fab" id="twinFab" aria-label="Chat with Joy's AI Twin">🤖</button>
-<div class="chat-fab-label" id="twinFabLabel">Chat with Joy's AI Twin</div>
+<button class="chat-fab" id="twinFab">🤖</button>
+<div class="chat-fab-label">Chat with Joy's AI Twin</div>
 
-<!-- AI TWIN OVERLAY -->
 <div class="twin-overlay" id="twinOverlay">
   <div class="twin-ov-header">
     <div class="twin-ov-avatar">🤖</div>
     <div class="twin-ov-info">
       <div class="twin-ov-name">Joy Ghosh — AI Twin</div>
-      <div class="twin-ov-sub">Ask me anything about Joy's work &amp; ideas</div>
+      <div class="twin-ov-sub">Ask me anything</div>
     </div>
     <div class="twin-ov-actions">
-      <a href="https://joyghoshin-joy-ghosh-ai-twin-new.hf.space" target="_blank" class="twin-ov-ext" title="Open full screen" style="font-size:.72rem;padding:4px 10px;border-radius:6px;white-space:nowrap;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.25);color:#00d2ff;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">&#8599; Full Screen</a>
+      <a href="https://joyghoshin-joy-ghosh-ai-twin-new.hf.space" target="_blank" class="twin-ov-ext">↗ Full Screen</a>
       <button class="twin-ov-close" id="twinClose">✕</button>
     </div>
   </div>
   <div class="twin-ov-body">
     <div class="twin-ov-loading" id="twinLoading">
-  <div class="twin-spin"></div>
-  <p style="text-align:center;margin-top:.8rem;">Loading Joy\'s AI Twin... &#129302;<br/>
-  <span style="font-size:.78em;opacity:.65;">May take 15–30 sec on first load</span></p>
-</div>
-      <p>Waking up Joy.AI… 🤖</p>
+      <div class="twin-spin"></div>
+      <p>Loading Joy's AI Twin...<br/><span style="font-size:.78em;opacity:.65;">May take 15–30 sec</span></p>
     </div>
-    <iframe
-  id="twinIframe"
-  title="Joy Ghosh AI Twin"
-  allow="microphone; fullscreen"
-  scrolling="yes"
-  style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block;"
-></iframe></iframe>
+    <iframe id="twinIframe" title="Joy AI Twin" allow="microphone; fullscreen"></iframe>
   </div>
 </div>
 
@@ -1190,10 +1041,9 @@
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
   /* ── TYPING EFFECT ── */
-  const phrases = ['Product Manager.','Vibe Coder.','AI Enthusiast.','Builder at heart.','Bridge between Biz & Tech.'];
+  const phrases = ['Product Manager.','Vibe Coder.','AI Enthusiast.','Builder at heart.'];
   let pi = 0, ci = 0, deleting = false;
   const typingEl = document.getElementById('typingText');
   function type() {
@@ -1216,17 +1066,16 @@
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
 
-  /* ── AI TWIN FAB (bottom-right) ── */
-  const twinFab     = document.getElementById('twinFab');
+  /* ── AI TWIN ── */
+  const twinFab = document.getElementById('twinFab');
   const twinOverlay = document.getElementById('twinOverlay');
-  const twinClose   = document.getElementById('twinClose');
-  const twinIframe  = document.getElementById('twinIframe');
+  const twinClose = document.getElementById('twinClose');
+  const twinIframe = document.getElementById('twinIframe');
   const twinLoading = document.getElementById('twinLoading');
-  let twinLoaded    = false;
+  let twinLoaded = false;
 
   twinFab.addEventListener('click', () => {
     twinOverlay.classList.add('active');
-    // Lazy-load the iframe on first open
     if (!twinLoaded) {
       twinLoaded = true;
       twinIframe.src = 'https://joyghoshin-joy-ghosh-ai-twin-new.hf.space';
@@ -1235,31 +1084,23 @@
   });
   twinClose.addEventListener('click', () => twinOverlay.classList.remove('active'));
 
-  /* ── SKYBOT MODAL (click to launch) ── */
-  const skybotModal       = document.getElementById('skybotModal');
-  const skybotModalClose  = document.getElementById('skybotModalClose');
-  const skybotIframe      = document.getElementById('skybotIframe');
-  const skybotLoading     = document.getElementById('skybotModalLoading');
-  const skybotLaunchBtn   = document.getElementById('skybotLaunchBtn');
-  let skybotLoaded        = false;
+  /* ── SKYBOT ── */
+  const skybotModal = document.getElementById('skybotModal');
+  const skybotLaunchBtn = document.getElementById('skybotLaunchBtn');
+  const skybotModalClose = document.getElementById('skybotModalClose');
+  const skybotIframe = document.getElementById('skybotIframe');
+  const skybotLoading = document.getElementById('skybotModalLoading');
+  let skybotLoaded = false;
 
   skybotLaunchBtn.addEventListener('click', () => {
     skybotModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
     if (!skybotLoaded) {
       skybotLoaded = true;
       skybotIframe.src = 'https://joyghoshin-skybot-airline-assistant.hf.space';
       skybotIframe.onload = () => skybotLoading.classList.add('hidden');
     }
   });
-
-  function closeSkybotModal() {
-    skybotModal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  skybotModalClose.addEventListener('click', closeSkybotModal);
-  skybotModal.addEventListener('click', e => { if (e.target === skybotModal) closeSkybotModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSkybotModal(); });
+  skybotModalClose.addEventListener('click', () => skybotModal.classList.remove('active'));
 </script>
 </body>
 </html>
