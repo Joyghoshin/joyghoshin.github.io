@@ -124,6 +124,82 @@
 
         radial-gradient(ellipse at 50% 90%,rgba(179,136,255,.05) 0%,transparent 45%);}
 
+    /* ✅ Hero Right Photo + AI Glow (no crop, dialog visible) */
+    .hero-wrap{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:4rem;
+    }
+    .hero-img{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .avatar-wrap{
+      position:relative;
+      width:min(720px, 46vw);
+      max-width:720px;
+      aspect-ratio:1 / 1;
+      display:grid;
+      place-items:center;
+    }
+    .avatar-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      border-radius:28px;
+      background:conic-gradient(
+        from 0deg,
+        rgba(0,210,255,0.00),
+        rgba(0,210,255,0.35),
+        rgba(58,123,213,0.28),
+        rgba(179,136,255,0.22),
+        rgba(0,230,118,0.18),
+        rgba(0,210,255,0.00)
+      );
+      filter:blur(14px);
+      opacity:.85;
+      animation:haloSpin 7s linear infinite, haloPulse 2.8s ease-in-out infinite;
+      z-index:0;
+    }
+    .avatar-wrap::after{
+      content:"";
+      position:absolute;
+      inset:-10px;
+      border-radius:28px;
+      background:radial-gradient(circle at 55% 40%, rgba(0,210,255,.22), rgba(0,210,255,0) 65%);
+      filter:blur(12px);
+      opacity:.9;
+      animation:haloPulse 2.8s ease-in-out infinite;
+      z-index:0;
+    }
+    @keyframes haloSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    @keyframes haloPulse{0%,100%{opacity:.55;transform:scale(0.99)}50%{opacity:.95;transform:scale(1.02)}}
+
+    .avatar-wrap img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+      border-radius:22px;
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(0,210,255,0.22);
+      box-shadow:0 14px 55px rgba(0,210,255,0.18);
+      position:relative;
+      z-index:1;
+      padding:10px;
+      transition:transform .25s ease;
+    }
+    .avatar-wrap img:hover{transform:scale(1.02);}
+
+    @media (prefers-reduced-motion: reduce){
+      .avatar-wrap::before,
+      .avatar-wrap::after{animation:none !important;}
+    }
+
+
     .hero-in{max-width:800px;}
 
     .eyebrow{display:inline-flex;align-items:center;gap:.5rem;
@@ -596,7 +672,16 @@
 
     /* ── RESPONSIVE ── */
 
+    
+
+    /* ✅ Responsive hero layout */
     @media(max-width:900px){
+      .hero-wrap{flex-direction:column;text-align:center;}
+      .hero-btns{justify-content:center;}
+      .hero-stats{justify-content:center;}
+      .avatar-wrap{width:min(420px, 88vw);max-width:420px;}
+    }
+@media(max-width:900px){
 
       .nav-links{display:none;}
 
@@ -684,7 +769,9 @@
 
 <section id="hero">
 
-  <div class="hero-in">
+  <div class="hero-wrap">
+
+    <div class="hero-in">
 
     <div class="eyebrow"><span class="dot"></span> Product Manager at Publicis Sapient</div>
 
@@ -717,6 +804,16 @@
     </div>
 
   </div>
+
+    <!-- Profile Photo (Right) -->
+    <div class="hero-img">
+      <div class="avatar-wrap" aria-hidden="false">
+        <img src="Profile%20Pic2.png" alt="Profile photo" loading="lazy" decoding="async" />
+      </div>
+    </div>
+
+  </div>
+
 
 </section>
 
