@@ -138,7 +138,6 @@
       justify-content:center;
       align-items:center;
     }
-
     .avatar-wrap{
       position:relative;
       width:min(720px, 46vw);
@@ -147,7 +146,6 @@
       display:grid;
       place-items:center;
     }
-
     .avatar-wrap::before{
       content:"";
       position:absolute;
@@ -166,9 +164,7 @@
       opacity:.85;
       animation:haloSpin 7s linear infinite, haloPulse 2.8s ease-in-out infinite;
       z-index:0;
-      pointer-events:none;
     }
-
     .avatar-wrap::after{
       content:"";
       position:absolute;
@@ -179,9 +175,7 @@
       opacity:.9;
       animation:haloPulse 2.8s ease-in-out infinite;
       z-index:0;
-      pointer-events:none;
     }
-
     @keyframes haloSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
     @keyframes haloPulse{0%,100%{opacity:.55;transform:scale(0.99)}50%{opacity:.95;transform:scale(1.02)}}
 
@@ -197,9 +191,7 @@
       z-index:1;
       padding:10px;
       transition:transform .25s ease;
-      display:block;
     }
-
     .avatar-wrap img:hover{transform:scale(1.02);}
 
     @media (prefers-reduced-motion: reduce){
@@ -793,9 +785,9 @@
 
     <div class="hero-btns">
 
-      <button class="btn btn-p" onclick="scrollToSection('projects')">&#128640; View My Work</button>
+      <button class="btn btn-p" onclick="scrollTo('projects')">&#128640; View My Work</button>
 
-      <button class="btn btn-g" onclick="scrollToSection('connect')">&#9993;&#65039; Get In Touch</button>
+      <button class="btn btn-g" onclick="scrollTo('connect')">&#9993;&#65039; Get In Touch</button>
 
     </div>
 
@@ -1725,7 +1717,7 @@
 
   // scroll helper
 
-  function scrollToSection(id){const el=document.getElementById(id);if(!el)return;el.scrollIntoView({behavior:'smooth',block:'start'});});}
+  function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
 
  
 
