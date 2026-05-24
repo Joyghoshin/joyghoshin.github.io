@@ -785,9 +785,9 @@
 
     <div class="hero-btns">
 
-      <button class="btn btn-p" onclick="scrollToSection('projects')">&#128640; View My Work</button>
+      <button class="btn btn-p" onclick="scrollTo('projects')">&#128640; View My Work</button>
 
-      <button class="btn btn-g" onclick="scrollToSection('connect')">&#9993;&#65039; Get In Touch</button>
+      <button class="btn btn-g" onclick="scrollTo('connect')">&#9993;&#65039; Get In Touch</button>
 
     </div>
 
@@ -1717,11 +1717,7 @@
 
   // scroll helper
 
-  function scrollToSection(id){
-  const el = document.getElementById(id);
-  if(!el) return;
-  el.scrollIntoView({behavior: "smooth", block: "start"});
-});}
+  function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
 
  
 
