@@ -1,6 +1,3 @@
-Here is the complete, updated HTML file. I have removed the `` artifacts from your uploaded text to ensure the code works perfectly, and I added a new project card for the Dalal Street AI link in the **Projects** section. The rest of the code remains exactly as you provided.
-
-```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,6 +25,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     :root{
 
       --bg:#07080f;--bg2:#0d1117;--bg3:#12151f;
+
       --card:#0f1322;--card-h:#141828;
 
       --border:rgba(255,255,255,0.07);
@@ -49,6 +47,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       --sh:0 4px 24px rgba(0,0,0,0.4);
 
       --sg:0 0 30px rgba(0,210,255,0.12);
+
     }
 
     body{background:var(--bg);color:var(--text);font-family:var(--fb);line-height:1.6;overflow-x:hidden;}
@@ -56,6 +55,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     body::before{content:'';position:fixed;inset:0;z-index:0;
 
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+
       pointer-events:none;opacity:0.4;}
 
     a{color:inherit;text-decoration:none;}
@@ -73,6 +73,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     /* ── NAV ── */
 
     nav{position:fixed;top:0;left:0;right:0;z-index:900;
+
       display:flex;align-items:center;justify-content:space-between;
 
       padding:0 5%;height:64px;
@@ -84,6 +85,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .nav-logo{font-family:var(--fh);font-weight:800;font-size:1.15rem;
 
       background:linear-gradient(135deg,var(--accent),var(--accent2));
+
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
     .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
@@ -97,6 +99,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s;}
 
     .mob-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:899;
+
       background:rgba(7,8,15,0.97);backdrop-filter:blur(18px);
 
       border-bottom:1px solid var(--border);padding:1.5rem 5%;
@@ -112,6 +115,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     /* ── HERO ── */
 
     #hero{min-height:100vh;display:flex;align-items:center;padding:6rem 5% 4rem;
+
       background:
 
         radial-gradient(ellipse at 15% 50%,rgba(0,210,255,.09) 0%,transparent 55%),
@@ -122,91 +126,158 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
 
     /* ✅ Hero Right Photo + AI Glow (no crop, dialog visible) */
     .hero-wrap{
+
       width:100%;
+
       display:flex;
+
       align-items:center;
+
       justify-content:space-between;
+
       gap:4rem;
+
     }
+
     .hero-img{
+
       flex:1;
+
       display:flex;
+
       justify-content:center;
+
       align-items:center;
+
     }
 
     .avatar-wrap{
+
       position:relative;
+
       width:min(720px, 46vw);
+
       max-width:720px;
+
       aspect-ratio:1 / 1;
+
       display:grid;
+
       place-items:center;
+
     }
 
     .avatar-wrap::before{
+
       content:"";
+
       position:absolute;
+
       inset:-18px;
+
       border-radius:28px;
+
       background:conic-gradient(
+
         from 0deg,
+
         rgba(0,210,255,0.00),
+
         rgba(0,210,255,0.35),
+
         rgba(58,123,213,0.28),
+
         rgba(179,136,255,0.22),
+
         rgba(0,230,118,0.18),
+
         rgba(0,210,255,0.00)
+
       );
+
       filter:blur(14px);
+
       opacity:.85;
+
       animation:haloSpin 7s linear infinite, haloPulse 2.8s ease-in-out infinite;
+
       z-index:0;
+
       pointer-events:none;
+
     }
 
     .avatar-wrap::after{
+
       content:"";
+
       position:absolute;
+
       inset:-10px;
+
       border-radius:28px;
+
       background:radial-gradient(circle at 55% 40%, rgba(0,210,255,.22), rgba(0,210,255,0) 65%);
+
       filter:blur(12px);
+
       opacity:.9;
+
       animation:haloPulse 2.8s ease-in-out infinite;
+
       z-index:0;
+
       pointer-events:none;
+
     }
 
     @keyframes haloSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
     @keyframes haloPulse{0%,100%{opacity:.55;transform:scale(0.99)}50%{opacity:.95;transform:scale(1.02)}}
 
     .avatar-wrap img{
+
       width:100%;
+
       height:auto;
+
       object-fit:contain;
+
       border-radius:22px;
+
       background:rgba(255,255,255,0.02);
+
       border:1px solid rgba(0,210,255,0.22);
+
       box-shadow:0 14px 55px rgba(0,210,255,0.18);
+
       position:relative;
+
       z-index:1;
+
       padding:10px;
+
       transition:transform .25s ease;
+
       display:block;
+
     }
 
     .avatar-wrap img:hover{transform:scale(1.02);}
 
     @media (prefers-reduced-motion: reduce){
+
       .avatar-wrap::before,
+
       .avatar-wrap::after{animation:none !important;}
+
     }
 
 
     .hero-in{max-width:800px;}
 
     .eyebrow{display:inline-flex;align-items:center;gap:.5rem;
+
       background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.2);
 
       border-radius:999px;padding:.3rem 1rem;font-size:.78rem;color:var(--accent);
@@ -214,11 +285,13 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       font-weight:600;letter-spacing:.8px;text-transform:uppercase;margin-bottom:1.8rem;}
 
     .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+
       box-shadow:0 0 8px var(--green);display:inline-block;animation:pulse 2s infinite;}
 
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
     .hero-name{font-family:var(--fh);font-weight:800;font-size:clamp(3rem,7vw,5.2rem);
+
       line-height:1.05;letter-spacing:-1px;margin-bottom:.6rem;}
 
     .hero-name .ac{background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -228,6 +301,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .hero-role{font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);margin-bottom:1.4rem;}
 
     .hero-typing{font-family:var(--fh);font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:700;
+
       color:var(--text);min-height:2.2rem;margin-bottom:1.4rem;}
 
     .hero-typing .cur{display:inline-block;width:3px;height:1.1em;background:var(--accent);
@@ -241,6 +315,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
 
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;
+
       border-radius:999px;font-size:.9rem;font-weight:600;cursor:pointer;
 
       transition:all .25s;border:none;font-family:var(--fb);}
@@ -258,6 +333,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .stat{display:flex;flex-direction:column;gap:.2rem;}
 
     .stat-n{font-family:var(--fh);font-size:1.5rem;font-weight:800;
+
       background:linear-gradient(135deg,var(--accent),var(--accent2));
 
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -273,6 +349,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .sec-in{max-width:1100px;margin:0 auto;}
 
     .sec-tag{display:inline-block;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
+
       color:var(--accent);font-weight:700;margin-bottom:.6rem;}
 
     .sec-title{font-family:var(--fh);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:800;
@@ -296,6 +373,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     @media(max-width:600px){.about-g{grid-template-columns:1fr;}}
 
     .about-c{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
       padding:1.5rem;transition:all .3s;}
 
     .about-c:hover{border-color:var(--bh);transform:translateY(-3px);box-shadow:var(--sg);}
@@ -315,6 +393,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     @media(max-width:600px){.proj-g{grid-template-columns:1fr;}}
 
     .proj-c{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
       padding:1.4rem;transition:all .3s;display:flex;flex-direction:column;gap:.9rem;position:relative;overflow:hidden;}
 
     .proj-c::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;
@@ -334,6 +413,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .pemi{font-size:1.7rem;}
 
     .badge{font-size:.63rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+
       padding:.22rem .6rem;border-radius:999px;}
 
     .b-live{background:rgba(0,230,118,.12);color:var(--green);border:1px solid rgba(0,230,118,.3);
@@ -341,6 +421,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       display:flex;align-items:center;gap:.3rem;}
 
     .b-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);
+
       box-shadow:0 0 6px var(--green);animation:pulse 2s infinite;}
 
     .b-soon{background:rgba(255,152,0,.1);color:var(--orange);border:1px solid rgba(255,152,0,.25);}
@@ -352,6 +433,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .tech-r{display:flex;flex-wrap:wrap;gap:.35rem;}
 
     .tp{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted);
+
       font-size:.68rem;padding:.15rem .5rem;border-radius:5px;font-family:'DM Mono','Courier New',monospace;}
 
     .pfoot{display:flex;align-items:center;justify-content:space-between;margin-top:.2rem;}
@@ -359,6 +441,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .plink{display:inline-flex;align-items:center;gap:.35rem;color:var(--accent);
 
       font-size:.82rem;font-weight:600;transition:gap .2s;cursor:pointer;
+
       background:none;border:none;font-family:var(--fb);}
 
     .plink:hover{gap:.6rem;}
@@ -374,6 +457,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .tk-g{display:flex;flex-wrap:wrap;gap:.6rem;}
 
     .tt{background:var(--card);border:1px solid var(--border);color:var(--muted);
+
       font-size:.8rem;padding:.38rem .85rem;border-radius:var(--rs);font-weight:500;
 
       transition:all .2s;cursor:default;}
@@ -383,6 +467,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .tt.tc{font-family:'DM Mono','Courier New',monospace;font-size:.76rem;}
 
     .tk-label{font-size:.72rem;color:var(--accent);font-weight:700;letter-spacing:1.2px;
+
       text-transform:uppercase;margin-bottom:.65rem;margin-top:1.6rem;}
 
     .tk-label:first-child{margin-top:0;}
@@ -394,6 +479,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-tl{position:relative;padding-left:2.2rem;}
 
     .exp-tl::before{content:'';position:absolute;left:.55rem;top:.5rem;bottom:.5rem;
+
       width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),transparent);
 
       border-radius:2px;opacity:.35;}
@@ -405,6 +491,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-dot{position:absolute;left:-1.87rem;top:.95rem;width:12px;height:12px;
 
       border-radius:50%;background:var(--bg);border:2px solid var(--accent2);
+
       z-index:2;transition:all .3s;}
 
     .exp-item.cur .exp-dot{background:var(--green);border-color:var(--green);
@@ -414,6 +501,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
 
       padding:1.2rem 1.4rem;transition:all .3s;
+
       border-left:3px solid transparent;}
 
     .exp-item.cur .exp-card{border-left-color:var(--green);}
@@ -421,6 +509,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-card:hover{border-color:var(--bh);border-left-color:var(--accent);box-shadow:var(--sg);}
 
     .exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+
       flex-wrap:wrap;margin-bottom:.3rem;}
 
     .exp-co{font-family:var(--fh);font-size:.95rem;font-weight:700;}
@@ -430,6 +519,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-date{font-size:.72rem;color:var(--muted2);background:rgba(255,255,255,.04);
 
       border:1px solid var(--border);padding:.18rem .55rem;border-radius:5px;
+
       white-space:nowrap;flex-shrink:0;}
 
     .exp-loc{font-size:.78rem;color:var(--muted);margin-bottom:.4rem;}
@@ -439,6 +529,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .exp-tags{display:flex;flex-wrap:wrap;gap:.35rem;}
 
     .etag{background:rgba(0,210,255,.07);border:1px solid rgba(0,210,255,.15);
+
       color:var(--accent);font-size:.65rem;padding:.15rem .5rem;border-radius:5px;
 
       font-weight:600;letter-spacing:.3px;}
@@ -460,6 +551,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     @media(max-width:660px){.edu-g{grid-template-columns:1fr;}}
 
     .edu-c{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
       padding:1.4rem;transition:all .3s;display:flex;flex-direction:column;gap:.6rem;}
 
     .edu-c:hover{border-color:var(--bh);transform:translateY(-3px);box-shadow:var(--sg);}
@@ -479,6 +571,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .edu-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem;}
 
     .edu-tag{background:rgba(0,210,255,.07);border:1px solid rgba(0,210,255,.15);
+
       color:var(--accent);font-size:.65rem;padding:.15rem .5rem;border-radius:5px;
 
       font-weight:600;}
@@ -488,6 +581,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       border:1px solid rgba(0,210,255,.35);color:var(--accent);
 
       font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+
       padding:.18rem .55rem;border-radius:999px;margin-left:.5rem;vertical-align:middle;}
 
  
@@ -499,6 +593,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .con-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1rem;}
 
     .con-c{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+
       padding:1.3rem;text-align:center;text-decoration:none;color:var(--text);
 
       transition:all .3s;display:block;}
@@ -516,6 +611,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     /* ── FOOTER ── */
 
     footer{text-align:center;padding:2.5rem 5%;border-top:1px solid var(--border);
+
       color:var(--muted);font-size:.82rem;}
 
     footer .ac{color:var(--accent);font-weight:600;}
@@ -525,6 +621,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     /* ── SKYBOT MODAL ── */
 
     .modal-ov{display:none;position:fixed;inset:0;z-index:1000;
+
       background:rgba(0,0,0,.85);backdrop-filter:blur(8px);
 
       align-items:center;justify-content:center;padding:1rem;}
@@ -536,6 +633,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       width:100%;max-width:600px;max-height:92vh;
 
       display:flex;flex-direction:column;overflow:hidden;
+
       box-shadow:0 0 60px rgba(0,210,255,.15);}
 
     .modal-hd{display:flex;align-items:center;justify-content:space-between;
@@ -543,6 +641,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       padding:1rem 1.4rem;border-bottom:1px solid var(--border);}
 
     .modal-ti{font-family:var(--fh);font-weight:700;font-size:.98rem;
+
       display:flex;align-items:center;gap:.5rem;}
 
     .modal-cl{background:none;border:none;color:var(--muted);font-size:1.4rem;
@@ -556,6 +655,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .modal-bd iframe{width:100%;height:100%;min-height:500px;border:none;}
 
     .m-load{display:flex;align-items:center;justify-content:center;
+
       height:500px;color:var(--muted);gap:.5rem;font-size:.9rem;}
 
  
@@ -569,6 +669,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       background:linear-gradient(135deg,var(--accent),var(--accent2));
 
       border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+
       font-size:1.5rem;box-shadow:0 4px 22px rgba(0,210,255,.45);
 
       transition:transform .25s;animation:fabP 3s ease-in-out infinite;}
@@ -578,6 +679,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     #fab:hover{transform:scale(1.1);}
 
     .fab-tip{position:absolute;right:70px;top:50%;transform:translateY(-50%);
+
       background:var(--card);border:1px solid var(--bh);border-radius:8px;
 
       padding:.4rem .85rem;font-size:.76rem;font-weight:600;white-space:nowrap;
@@ -593,6 +695,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     #twin-panel{
 
       position:fixed;bottom:5.5rem;right:1.5rem;z-index:799;
+
       width:520px;height:650px;
 
       max-width:calc(100vw - 2rem);
@@ -602,6 +705,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       border-radius:20px;
 
       box-shadow:0 0 55px rgba(0,210,255,.18);
+
       display:none;flex-direction:column;overflow:hidden;}
 
     #twin-panel.open{display:flex;}
@@ -611,6 +715,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       padding:.9rem 1.3rem;border-bottom:1px solid var(--border);background:var(--card);}
 
     .tp-ti{font-family:var(--fh);font-weight:700;font-size:.9rem;
+
       display:flex;align-items:center;gap:.5rem;}
 
     .tp-cl{background:none;border:none;color:var(--muted);font-size:1.2rem;
@@ -624,6 +729,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     .tp-bd iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
     .tp-load{display:flex;align-items:center;justify-content:center;
+
       height:100%;color:var(--muted);gap:.5rem;font-size:.85rem;
 
       position:absolute;inset:0;}
@@ -643,12 +749,19 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
     
 
     /* ✅ Responsive hero layout */
+
     @media(max-width:900px){
+
       .hero-wrap{flex-direction:column;text-align:center;}
+
       .hero-btns{justify-content:center;}
+
       .hero-stats{justify-content:center;}
+
       .avatar-wrap{width:min(420px, 88vw);max-width:420px;}
+
     }
+
 @media(max-width:900px){
 
       .nav-links{display:none;}
@@ -657,7 +770,6 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
 
     @media(max-width:640px){
 
-      
       .hero-stats{gap:1.4rem;}
 
       .hero-btns{flex-direction:column;align-items:flex-start;}
@@ -667,6 +779,7 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
       #twin-panel{
 
         position:fixed;inset:0;bottom:0;right:0;
+
         width:100%;height:100%;max-width:100%;
 
         border-radius:0;
@@ -684,6 +797,8 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
 <body>
 
  
+
+<!-- NAV -->
 
 <nav>
 
@@ -723,14 +838,15 @@ Here is the complete, updated HTML file. I have removed the `` artifacts from yo
 
   <a href="#education"  onclick="closeMob()">Education</a>
 
-  <a href="#toolkit"    
-onclick="closeMob()">Toolkit</a>
+  <a href="#toolkit"    onclick="closeMob()">Toolkit</a>
 
   <a href="#connect"    onclick="closeMob()">Connect</a>
 
 </div>
 
  
+
+<!-- HERO -->
 
 <section id="hero">
 
@@ -742,21 +858,17 @@ onclick="closeMob()">Toolkit</a>
 
     <h1 class="hero-name">Joy<br/><span class="ac">Ghosh</span></h1>
 
-    <p class="hero-role">Senior PM &nbsp;&middot;&nbsp;
-AI &amp; Digital Experience &nbsp;&middot;&nbsp; Bengaluru, India</p>
+    <p class="hero-role">Senior PM &nbsp;&middot;&nbsp; AI &amp; Digital Experience &nbsp;&middot;&nbsp; Bengaluru, India</p>
 
     <div class="hero-typing"><span id="typed"></span><span class="cur"></span></div>
 
-    <p class="hero-desc">I don't just define products — I build them.
-From enterprise AEM platforms to live AI demos, I bridge product strategy with hands-on technical execution.</p>
+    <p class="hero-desc">I don't just define products — I build them. From enterprise AEM platforms to live AI demos, I bridge product strategy with hands-on technical execution.</p>
 
     <div class="hero-btns">
 
-      <button class="btn btn-p" href="#projects">&#128640;
-View My Work</button>
+      <button class="btn btn-p" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">&#128640; View My Work</button>
 
-      <button class="btn btn-g" href="#connect">&#9993;&#65039;
-Get In Touch</button>
+      <button class="btn btn-g" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">&#9993;&#65039; Get In Touch</button>
 
     </div>
 
@@ -774,11 +886,16 @@ Get In Touch</button>
 
   </div>
 
+    <!-- Profile Photo (Right) -->
+
     <div class="hero-img">
+
       <div class="avatar-wrap" aria-hidden="false">
+
         <img src="Profile%20Pic2.png" alt="Profile photo" loading="lazy" decoding="async" />
-      
+
       </div>
+
     </div>
 
   </div>
@@ -792,27 +909,25 @@ Get In Touch</button>
 
  
 
+<!-- ABOUT -->
+
 <section class="sec" id="about">
 
   <div class="sec-in rev">
 
     <div class="sec-tag">About Me</div>
 
-    <h2 class="sec-title">PM.
-Builder. <em>Innovator.</em></h2>
+    <h2 class="sec-title">PM. Builder. <em>Innovator.</em></h2>
 
-    <p class="sec-sub">Senior Product Manager with 18+ years delivering B2B/B2C digital products across Travel, Logistics, AI &amp;
-Enterprise. I specialise in turning complex problems into live, working solutions.</p>
+    <p class="sec-sub">Senior Product Manager with 18+ years delivering B2B/B2C digital products across Travel, Logistics, AI &amp; Enterprise. I specialise in turning complex problems into live, working solutions.</p>
 
     <div class="about-g">
 
       <div class="about-c"><div class="ico">&#129504;</div><h3>Product Thinking</h3><p>Strategy, roadmaps, user stories, backlog management and stakeholder alignment across multi-region enterprise-scale engagements.</p></div>
 
-      <div class="about-c"><div class="ico">&#128736;&#65039;</div><h3>Technical Execution</h3><p>Python, Streamlit, Mapbox, Groq LLM, Algolia, Flask, AEM.
-I build prototypes and demos — not just slide decks.</p></div>
+      <div class="about-c"><div class="ico">&#128736;&#65039;</div><h3>Technical Execution</h3><p>Python, Streamlit, Mapbox, Groq LLM, Algolia, Flask, AEM. I build prototypes and demos — not just slide decks.</p></div>
 
-      <div class="about-c"><div class="ico">&#129302;</div><h3>AI Innovation</h3><p>RAG pipelines, agentic solutions, contextual search and LLM-powered experiences.
-From ideation to deployed demo in days.</p></div>
+      <div class="about-c"><div class="ico">&#129302;</div><h3>AI Innovation</h3><p>RAG pipelines, agentic solutions, contextual search and LLM-powered experiences. From ideation to deployed demo in days.</p></div>
 
       <div class="about-c"><div class="ico">&#9889;</div><h3>Vibe Coder</h3><p>I prototype quickly and ship side projects to stay technically sharp — because the best PMs understand what they manage.</p></div>
 
@@ -828,17 +943,17 @@ From ideation to deployed demo in days.</p></div>
 
  
 
+<!-- PROJECTS -->
+
 <section class="sec" id="projects">
 
   <div class="sec-in rev">
 
     <div class="sec-tag">Live Projects</div>
 
-    <h2 class="sec-title">Things I've <em>Built &amp;
-Shipped</em></h2>
+    <h2 class="sec-title">Things I've <em>Built &amp; Shipped</em></h2>
 
-    <p class="sec-sub">Live AI applications — not localhost experiments.
-Built, deployed, and accessible right now.</p>
+    <p class="sec-sub">Live AI applications — not localhost experiments. Built, deployed, and accessible right now.</p>
 
     <div class="proj-g">
 
@@ -850,8 +965,7 @@ Built, deployed, and accessible right now.</p>
 
         <h3>SkyBot — Airline AI Assistant</h3>
 
-        <p>A fully functional AI-powered airline assistant.
-Ask it about flights, bookings, baggage policies and more. Built and deployed on Hugging Face Spaces.</p>
+        <p>A fully functional AI-powered airline assistant. Ask it about flights, bookings, baggage policies and more. Built and deployed on Hugging Face Spaces.</p>
 
         <div class="tech-r">
 
@@ -871,15 +985,13 @@ Ask it about flights, bookings, baggage policies and more. Built and deployed on
 
  
 
-      
       <div class="proj-c">
 
         <div class="ph"><span class="pemi">&#128506;&#65039;</span><span class="badge b-live">Live</span></div>
 
         <h3>Map-Based Property Search</h3>
 
-        <p>Location-first logistics property discovery.
-Geo-spatial search powered by Mapbox + Algolia with viewport-driven results and smart filter panels.</p>
+        <p>Location-first logistics property discovery. Geo-spatial search powered by Mapbox + Algolia with viewport-driven results and smart filter panels.</p>
 
         <div class="tech-r">
 
@@ -899,15 +1011,39 @@ Geo-spatial search powered by Mapbox + Algolia with viewport-driven results and 
 
  
 
-      
+      <div class="proj-c">
+
+        <div class="ph"><span class="pemi">&#128200;</span><span class="badge b-live">Live</span></div>
+
+        <h3>Dalal Street AI</h3>
+
+        <p>An AI-powered platform for Indian stock market insights. Intelligent analysis, real-time data and conversational finance — built for the modern investor.</p>
+
+        <div class="tech-r">
+
+          <span class="tp">AI</span><span class="tp">Finance</span>
+
+          <span class="tp">Next.js</span><span class="tp">Vercel</span>
+
+        </div>
+
+        <div class="pfoot">
+
+          <button class="plink" onclick="window.open('https://dalal-street-ai-pmpn.vercel.app/login','_blank')">Launch Demo &#8594;</button>
+
+        </div>
+
+      </div>
+
+ 
+
       <div class="proj-c dim">
 
         <div class="ph"><span class="pemi">&#127782;&#65039;</span><span class="badge b-soon">Coming Soon</span></div>
 
         <h3>Weather Prediction App</h3>
 
-        <p>ML-powered weather forecasting application.
-Predictive modelling with real-time data feeds and an intuitive visual dashboard for actionable insights.</p>
+        <p>ML-powered weather forecasting application. Predictive modelling with real-time data feeds and an intuitive visual dashboard for actionable insights.</p>
 
         <div class="tech-r">
 
@@ -917,8 +1053,7 @@ Predictive modelling with real-time data feeds and an intuitive visual dashboard
 
         </div>
 
-        <div class="pfoot"><span class="clabel">&#9203;
-In Development</span></div>
+        <div class="pfoot"><span class="clabel">&#9203; In Development</span></div>
 
       </div>
 
@@ -928,11 +1063,9 @@ In Development</span></div>
 
         <div class="ph"><span class="pemi">&#128185;</span><span class="badge b-soon">Coming Soon</span></div>
 
-        <h3>Economy &amp;
-Finance Bot</h3>
+        <h3>Economy &amp; Finance Bot</h3>
 
-        <p>RAG-based conversational finance assistant.
-Ask complex economic and financial questions — powered by Groq LLM with a FAISS vector knowledge base.</p>
+        <p>RAG-based conversational finance assistant. Ask complex economic and financial questions — powered by Groq LLM with a FAISS vector knowledge base.</p>
 
         <div class="tech-r">
 
@@ -942,22 +1075,11 @@ Ask complex economic and financial questions — powered by Groq LLM with a FAIS
 
         </div>
 
-        <div class="pfoot"><span class="clabel">&#9203;
-In Development</span></div>
+        <div class="pfoot"><span class="clabel">&#9203; In Development</span></div>
 
       </div>
 
-      <div class="proj-c">
-        <div class="ph"><span class="pemi">&#128200;</span><span class="badge b-live">Live</span></div>
-        <h3>Dalal Street AI</h3>
-        <p>AI-powered platform for the Indian stock market and financial insights.</p>
-        <div class="tech-r">
-          <span class="tp">AI</span><span class="tp">Web App</span>
-        </div>
-        <div class="pfoot">
-          <button class="plink" onclick="window.open('https://dalal-street-ai-pmpn.vercel.app/login','_blank')">Launch Demo &#8594;</button>
-        </div>
-      </div>
+ 
 
     </div>
 
@@ -970,6 +1092,8 @@ In Development</span></div>
 <hr class="divider"/>
 
  
+
+<!-- EXPERIENCE -->
 
 <section class="sec" id="experience">
 
@@ -989,8 +1113,7 @@ In Development</span></div>
 
         <div class="exp-dot"></div>
 
-        <div 
-class="exp-card">
+        <div class="exp-card">
 
           <div class="exp-top">
 
@@ -1000,8 +1123,7 @@ class="exp-card">
 
               <div class="exp-role">Product Manager</div>
 
-              <div class="exp-loc">&#128205;
-Bengaluru, Karnataka, India</div>
+              <div class="exp-loc">&#128205; Bengaluru, Karnataka, India</div>
 
             </div>
 
@@ -1009,10 +1131,7 @@ Bengaluru, Karnataka, India</div>
 
           </div>
 
-          <div class="exp-desc">Leading digital transformation for enterprise clients — owning end-to-end product lifecycle from discovery and stakeholder alignment to sprint planning and delivery.
-Currently leading GLP → Marq Logistics global website rebranding across EU, US, Brazil &amp; Japan.
-Actively contributing to engineering through prototyping and technical spec writing.
-Core work spans Agentic AI platform (A2A, Agent Evals, Agent CRUD), AEM, Map-Based Search.</div>
+          <div class="exp-desc">Leading digital transformation for enterprise clients — owning end-to-end product lifecycle from discovery and stakeholder alignment to sprint planning and delivery. Currently leading GLP → Marq Logistics global website rebranding across EU, US, Brazil &amp; Japan. Actively contributing to engineering through prototyping and technical spec writing. Core work spans Agentic AI platform (A2A, Agent Evals, Agent CRUD), AEM, Map-Based Search.</div>
 
           <div class="exp-tags">
 
@@ -1030,7 +1149,6 @@ Core work spans Agentic AI platform (A2A, Agent Evals, Agent CRUD), AEM, Map-Bas
 
  
 
-      
       <div class="exp-item">
 
         <div class="exp-dot"></div>
@@ -1045,8 +1163,7 @@ Core work spans Agentic AI platform (A2A, Agent Evals, Agent CRUD), AEM, Map-Bas
 
               <div class="exp-role">Lead Business Analyst</div>
 
-              <div class="exp-loc">&#128205;
-Bengaluru, Karnataka, India</div>
+              <div class="exp-loc">&#128205; Bengaluru, Karnataka, India</div>
 
             </div>
 
@@ -1064,7 +1181,6 @@ Bengaluru, Karnataka, India</div>
 
  
 
-      
       <div class="exp-item">
 
         <div class="exp-dot"></div>
@@ -1079,21 +1195,17 @@ Bengaluru, Karnataka, India</div>
 
               <div class="exp-role">Senior Consultant</div>
 
-              <div class="exp-loc">&#128205;
-Bengaluru, Karnataka, India</div>
+              <div class="exp-loc">&#128205; Bengaluru, Karnataka, India</div>
 
             </div>
 
-            <span class="exp-date">Jan 2014 – Nov 2021 &nbsp;&middot;&nbsp;
-7 yrs 11 mos</span>
+            <span class="exp-date">Jan 2014 – Nov 2021 &nbsp;&middot;&nbsp; 7 yrs 11 mos</span>
 
           </div>
 
-          <div class="exp-desc">A significant long-term engagement covering major airline and OTA projects.
-Travel &amp; airline domain consulting, digital product delivery, and enterprise client engagement across global airline and OTA clients.</div>
+          <div class="exp-desc">A significant long-term engagement covering major airline and OTA projects. Travel &amp; airline domain consulting, digital product delivery, and enterprise client engagement across global airline and OTA clients.</div>
 
-          <div class="exp-tags"><span class="etag">Travel &amp;
-Airline</span><span class="etag">OTA</span><span class="etag">Digital Products</span><span class="etag">Consulting</span></div>
+          <div class="exp-tags"><span class="etag">Travel &amp; Airline</span><span class="etag">OTA</span><span class="etag">Digital Products</span><span class="etag">Consulting</span></div>
 
         </div>
 
@@ -1113,11 +1225,9 @@ Airline</span><span class="etag">OTA</span><span class="etag">Digital Products</
 
               <div class="exp-co">NIIT Technologies Limited</div>
 
-              <div class="exp-role">Senior 
-Business Analyst</div>
+              <div class="exp-role">Senior Business Analyst</div>
 
-              <div class="exp-loc">&#128205;
-Greater Noida, Uttar Pradesh, India</div>
+              <div class="exp-loc">&#128205; Greater Noida, Uttar Pradesh, India</div>
 
             </div>
 
@@ -1135,8 +1245,7 @@ Greater Noida, Uttar Pradesh, India</div>
 
  
 
-      <div 
-class="exp-item">
+      <div class="exp-item">
 
         <div class="exp-dot"></div>
 
@@ -1150,8 +1259,7 @@ class="exp-item">
 
               <div class="exp-role">Senior Operations Executive / Team Lead / Manager</div>
 
-              <div class="exp-loc">&#128205;
-Greater Hyderabad Area</div>
+              <div class="exp-loc">&#128205; Greater Hyderabad Area</div>
 
             </div>
 
@@ -1171,7 +1279,6 @@ Greater Hyderabad Area</div>
 
       <div class="exp-item">
 
-     
         <div class="exp-dot"></div>
 
         <div class="exp-card">
@@ -1184,8 +1291,7 @@ Greater Hyderabad Area</div>
 
               <div class="exp-role">Senior QA Specialist</div>
 
-              <div class="exp-loc">&#128205;
-Noida, Uttar Pradesh, India</div>
+              <div class="exp-loc">&#128205; Noida, Uttar Pradesh, India</div>
 
             </div>
 
@@ -1193,8 +1299,7 @@ Noida, Uttar Pradesh, India</div>
 
           </div>
 
-          <div class="exp-desc">Quality assurance for travel &amp;
-technology platforms.</div>
+          <div class="exp-desc">Quality assurance for travel &amp; technology platforms.</div>
 
           <div class="exp-tags"><span class="etag">QA</span><span class="etag">Travel Tech</span></div>
 
@@ -1216,11 +1321,9 @@ technology platforms.</div>
 
               <div class="exp-co">InterGlobe Enterprises &#9992;&#65039;</div>
 
-     
               <div class="exp-role">QA Specialist</div>
 
-              <div class="exp-loc">&#128205;
-Gurugram, Haryana, India</div>
+              <div class="exp-loc">&#128205; Gurugram, Haryana, India</div>
 
             </div>
 
@@ -1228,8 +1331,7 @@ Gurugram, Haryana, India</div>
 
           </div>
 
-          <div class="exp-desc">Quality assurance for airline systems at InterGlobe Enterprises — the parent company of IndiGo Airlines.
-This role gave deep airline industry exposure and domain expertise that has shaped my entire career.</div>
+          <div class="exp-desc">Quality assurance for airline systems at InterGlobe Enterprises — the parent company of IndiGo Airlines. This role gave deep airline industry exposure and domain expertise that has shaped my entire career.</div>
 
           <div class="exp-tags"><span class="etag">Airline Systems</span><span class="etag">QA</span><span class="etag">IndiGo Parent Co.</span></div>
 
@@ -1249,13 +1351,11 @@ This role gave deep airline industry exposure and domain expertise that has shap
 
             <div>
 
-     
               <div class="exp-co">WNS Global Services SA</div>
 
               <div class="exp-role">Senior Operations Executive</div>
 
-              <div class="exp-loc">&#128205;
-Gurugram, Haryana, India</div>
+              <div class="exp-loc">&#128205; Gurugram, Haryana, India</div>
 
             </div>
 
@@ -1275,7 +1375,6 @@ Gurugram, Haryana, India</div>
 
       <div class="exp-item">
 
-        
         <div class="exp-dot"></div>
 
         <div class="exp-card">
@@ -1288,8 +1387,7 @@ Gurugram, Haryana, India</div>
 
               <div class="exp-role">QA Specialist</div>
 
-              <div class="exp-loc">&#128205;
-Noida, Uttar Pradesh, India</div>
+              <div class="exp-loc">&#128205; Noida, Uttar Pradesh, India</div>
 
             </div>
 
@@ -1309,8 +1407,7 @@ Noida, Uttar Pradesh, India</div>
 
       <div class="exp-item">
 
-        <div 
-class="exp-dot"></div>
+        <div class="exp-dot"></div>
 
         <div class="exp-card">
 
@@ -1322,8 +1419,7 @@ class="exp-dot"></div>
 
               <div class="exp-role">Senior Operations Executive</div>
 
-              <div class="exp-loc">&#128205;
-New Delhi, India</div>
+              <div class="exp-loc">&#128205; New Delhi, India</div>
 
             </div>
 
@@ -1343,7 +1439,6 @@ New Delhi, India</div>
 
       <div class="exp-item">
 
-        
         <div class="exp-dot"></div>
 
         <div class="exp-card">
@@ -1356,8 +1451,7 @@ New Delhi, India</div>
 
               <div class="exp-role">Management Team Member</div>
 
-              <div class="exp-loc">&#128205;
-Gurugram, Haryana, India</div>
+              <div class="exp-loc">&#128205; Gurugram, Haryana, India</div>
 
             </div>
 
@@ -1365,8 +1459,7 @@ Gurugram, Haryana, India</div>
 
           </div>
 
-          <div class="exp-desc">Career starting point — management and operations.
-The foundation of a 24+ year journey from operations to AI product management.</div>
+          <div class="exp-desc">Career starting point — management and operations. The foundation of a 24+ year journey from operations to AI product management.</div>
 
           <div class="exp-tags"><span class="etag">Management</span><span class="etag">Operations</span><span class="etag">Career Start</span></div>
 
@@ -1388,6 +1481,8 @@ The foundation of a 24+ year journey from operations to AI product management.</
 
  
 
+<!-- EDUCATION -->
+
 <section class="sec" id="education">
 
   <div class="sec-in rev">
@@ -1396,8 +1491,7 @@ The foundation of a 24+ year journey from operations to AI product management.</
 
     <h2 class="sec-title">Academic <em>Background</em></h2>
 
-    <p class="sec-sub">Formally trained in science and business.
-Continuously learning through building.</p>
+    <p class="sec-sub">Formally trained in science and business. Continuously learning through building.</p>
 
     <div class="edu-g">
 
@@ -1411,8 +1505,7 @@ Continuously learning through building.</p>
 
         <div class="edu-inst">Symbiosis Centre for Distance Learning</div>
 
-        <div class="edu-yr">&#128197;
-April 2020 – April 2022</div>
+        <div class="edu-yr">&#128197; April 2020 – April 2022</div>
 
         <div class="edu-desc">Specialisation in Finance with strong foundation in financial modeling, business case creation, ROI analysis, and data-driven product decisions.</div>
 
@@ -1420,8 +1513,7 @@ April 2020 – April 2022</div>
 
           <span class="edu-tag">Capital Markets</span>
 
-          <span class="edu-tag">Banking &amp;
-Financial Institutions</span>
+          <span class="edu-tag">Banking &amp; Financial Institutions</span>
 
           <span class="edu-tag">Finance</span>
 
@@ -1437,13 +1529,11 @@ Financial Institutions</span>
 
         <div class="edu-ico">&#127979;</div>
 
-        <div class="edu-deg">Bachelor of Science (BSc) — Chemistry &amp;
-Biology</div>
+        <div class="edu-deg">Bachelor of Science (BSc) — Chemistry &amp; Biology</div>
 
         <div class="edu-inst">The University of Burdwan</div>
 
-        <div class="edu-yr">&#128197;
-June 1996 – May 1999</div>
+        <div class="edu-yr">&#128197; June 1996 – May 1999</div>
 
         <div class="edu-desc">Science background that built strong analytical and research skills — the foundation for a data-driven product career.</div>
 
@@ -1463,15 +1553,13 @@ June 1996 – May 1999</div>
 
       <div class="edu-c">
 
-      
         <div class="edu-ico">&#127981;</div>
 
         <div class="edu-deg">Higher Secondary (12th) — Science</div>
 
         <div class="edu-inst">Ramananda College</div>
 
-        <div class="edu-yr">&#128197;
-May 1994 – May 1996</div>
+        <div class="edu-yr">&#128197; May 1994 – May 1996</div>
 
         <div class="edu-desc">Physics, Chemistry and Mathematics — strong STEM foundation.</div>
 
@@ -1493,14 +1581,11 @@ May 1994 – May 1996</div>
 
         <div class="edu-ico">&#127891;</div>
 
-       
         <div class="edu-deg">Secondary Education (10th)</div>
 
-        <div class="edu-inst">Bishnupur High School &nbsp;&middot;&nbsp; Estd.
-1879</div>
+        <div class="edu-inst">Bishnupur High School &nbsp;&middot;&nbsp; Estd. 1879</div>
 
-        <div class="edu-yr">&#128197; March 1989 – April 1994 &nbsp;&middot;&nbsp; Govt.
-of West Bengal</div>
+        <div class="edu-yr">&#128197; March 1989 – April 1994 &nbsp;&middot;&nbsp; Govt. of West Bengal</div>
 
         <div class="edu-desc">A historic school with 140+ years of legacy — where the foundation was laid.</div>
 
@@ -1508,11 +1593,9 @@ of West Bengal</div>
 
           <span class="edu-tag">West Bengal</span>
 
-          <span class="edu-tag">Govt.
-School</span>
+          <span class="edu-tag">Govt. School</span>
 
-          <span class="edu-tag">Est.
-1879</span>
+          <span class="edu-tag">Est. 1879</span>
 
         </div>
 
@@ -1532,14 +1615,15 @@ School</span>
 
  
 
+<!-- TOOLKIT -->
+
 <section class="sec" id="toolkit">
 
   <div class="sec-in rev">
 
     <div class="sec-tag">Toolkit</div>
 
-    <h2 class="sec-title">Product &amp;
-<em>Technical Skills</em></h2>
+    <h2 class="sec-title">Product &amp; <em>Technical Skills</em></h2>
 
     <p class="sec-sub">The rare combination — product strategy depth with hands-on technical capability.</p>
 
@@ -1559,8 +1643,7 @@ School</span>
 
       <span class="tt">MVP Scoping</span><span class="tt">JIRA / Confluence</span>
 
-      <span class="tt">Discovery &amp;
-Define</span><span class="tt">Enterprise Platforms</span>
+      <span class="tt">Discovery &amp; Define</span><span class="tt">Enterprise Platforms</span>
 
     </div>
 
@@ -1582,7 +1665,6 @@ Define</span><span class="tt">Enterprise Platforms</span>
 
       <span class="tt tc">Agentic AI</span><span class="tt tc">HTML / CSS / JS</span>
 
-     
       <span class="tt tc">Gradio</span><span class="tt tc">HuggingFace</span>
 
     </div>
@@ -1596,6 +1678,8 @@ Define</span><span class="tt">Enterprise Platforms</span>
 <hr class="divider"/>
 
  
+
+<!-- CONNECT -->
 
 <section class="sec" id="connect">
 
@@ -1617,7 +1701,6 @@ Define</span><span class="tt">Enterprise Platforms</span>
 
       </a>
 
-   
       <a href="https://github.com/Joyghoshin" target="_blank" class="con-c">
 
         <span class="con-ico">&#128025;</span>
@@ -1642,7 +1725,6 @@ Define</span><span class="tt">Enterprise Platforms</span>
 
       </a>
 
-   
     </div>
 
   </div>
@@ -1651,14 +1733,17 @@ Define</span><span class="tt">Enterprise Platforms</span>
 
  
 
+<!-- FOOTER -->
+
 <footer>
 
-  <p>Built with &#10084;&#65039; by <span class="ac">Joy Ghosh</span> &nbsp;&middot;&nbsp; PM who builds &nbsp;&middot;&nbsp;
-2025</p>
+  <p>Built with &#10084;&#65039; by <span class="ac">Joy Ghosh</span> &nbsp;&middot;&nbsp; PM who builds &nbsp;&middot;&nbsp; 2025</p>
 
 </footer>
 
  
+
+<!-- SKYBOT MODAL -->
 
 <div class="modal-ov" id="sky-modal" onclick="closeSkybot(event)">
 
@@ -1666,8 +1751,7 @@ Define</span><span class="tt">Enterprise Platforms</span>
 
     <div class="modal-hd">
 
-      <div class="modal-ti">&#9992;&#65039;
-SkyBot — Airline AI Assistant &nbsp;<span class="badge b-live" style="font-size:.58rem">Live</span></div>
+      <div class="modal-ti">&#9992;&#65039; SkyBot — Airline AI Assistant &nbsp;<span class="badge b-live" style="font-size:.58rem">Live</span></div>
 
       <button class="modal-cl" onclick="closeSkybot()">&#10005;</button>
 
@@ -1675,8 +1759,7 @@ SkyBot — Airline AI Assistant &nbsp;<span class="badge b-live" style="font-siz
 
     <div class="modal-bd" id="sky-bd">
 
-      <div class="m-load" id="sky-load">&#9203;
-Spinning up SkyBot... takes a few seconds &#9992;&#65039;</div>
+      <div class="m-load" id="sky-load">&#9203; Spinning up SkyBot... takes a few seconds &#9992;&#65039;</div>
 
     </div>
 
@@ -1686,21 +1769,25 @@ Spinning up SkyBot... takes a few seconds &#9992;&#65039;</div>
 
  
 
+<!-- AI TWIN FAB — ONLY entry point -->
+
 <button id="fab" onclick="toggleTwin()" title="Chat with Joy's AI Twin">
 
   &#129302;
-<span class="fab-tip">Chat with AI Twin</span>
+
+  <span class="fab-tip">Chat with AI Twin</span>
 
 </button>
 
  
 
+<!-- AI TWIN PANEL -->
+
 <div id="twin-panel">
 
   <div class="tp-hd">
 
-    <div class="tp-ti">&#129302;
-Joy's AI Digital Twin</div>
+    <div class="tp-ti">&#129302; Joy's AI Digital Twin</div>
 
     <button class="tp-cl" onclick="closeTwin()">&#10005;</button>
 
@@ -1708,8 +1795,7 @@ Joy's AI Digital Twin</div>
 
   <div class="tp-bd" id="tp-bd">
 
-    <div class="tp-load" id="tp-load">&#129302;
-Waking up Joy.AI&#8230;</div>
+    <div class="tp-load" id="tp-load">&#129302; Waking up Joy.AI&#8230;</div>
 
   </div>
 
@@ -1722,7 +1808,8 @@ Waking up Joy.AI&#8230;</div>
   // typing
 
   const phrases=["I build AI demos.","I ship digital products.","I bridge product & engineering.","I turn ideas into live experiences.","I am a PM who codes."];
-let pi=0,ci=0,del=false;
+
+  let pi=0,ci=0,del=false;
 
   const tel=document.getElementById("typed");
 
@@ -1737,7 +1824,10 @@ let pi=0,ci=0,del=false;
   const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("vis");});},{threshold:0.08});
 
   document.querySelectorAll(".rev").forEach(el=>ro.observe(el));
-// scroll helper
+
+ 
+
+  // scroll helper
 
   function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
 
@@ -1754,7 +1844,8 @@ let pi=0,ci=0,del=false;
   // skybot modal
 
   let skyLoaded=false;
-function openSkybot(){
+
+  function openSkybot(){
 
     document.getElementById("sky-modal").classList.add("open");
 
@@ -1769,7 +1860,8 @@ function openSkybot(){
       const fr=document.createElement("iframe");
 
       fr.src="https://joyghoshin-skybot-airline-assistant.hf.space";
-fr.style.cssText="width:100%;height:100%;min-height:500px;border:none;opacity:0;transition:opacity .5s;";
+
+      fr.style.cssText="width:100%;height:100%;min-height:500px;border:none;opacity:0;transition:opacity .5s;";
 
       fr.onload=()=>{ld.style.display="none";fr.style.opacity="1";};
 
@@ -1784,14 +1876,16 @@ fr.style.cssText="width:100%;height:100%;min-height:500px;border:none;opacity:0;
     if(!e||e.target===document.getElementById("sky-modal")||e.currentTarget.classList&&e.currentTarget.classList.contains("modal-cl"))
 
       document.getElementById("sky-modal").classList.remove("open");
-}
+
+  }
 
  
 
   // AI twin — SINGLE entry point (FAB only)
 
   let twinLoaded=false;
-function toggleTwin(){
+
+  function toggleTwin(){
 
     const p=document.getElementById("twin-panel");
 
@@ -1804,7 +1898,8 @@ function toggleTwin(){
     const p=document.getElementById("twin-panel");
 
     p.classList.add("open");
-if(!twinLoaded){
+
+    if(!twinLoaded){
 
       twinLoaded=true;
 
@@ -1821,7 +1916,8 @@ if(!twinLoaded){
       fr.onload=()=>{ld.style.display="none";fr.style.opacity="1";};
 
       bd.appendChild(fr);
-}
+
+    }
 
   }
 
@@ -1832,5 +1928,3 @@ if(!twinLoaded){
 </body>
 
 </html>
-
-```
