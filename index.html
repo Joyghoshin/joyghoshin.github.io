@@ -448,6 +448,60 @@
 
     .clabel{color:var(--muted2);font-size:.78rem;font-weight:500;}
 
+    /* ── PRODUCT PHILOSOPHY ── */
+
+    .philosophy-block{margin-top:2.5rem;background:linear-gradient(135deg,rgba(0,210,255,.05),rgba(58,123,213,.05));
+
+      border:1px solid rgba(0,210,255,.15);border-radius:var(--r);padding:1.8rem 2rem;}
+
+    .phi-tag{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);
+
+      font-weight:700;margin-bottom:1.2rem;}
+
+    .phi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+
+    @media(max-width:700px){.phi-grid{grid-template-columns:1fr;}}
+
+    .phi-item{display:flex;flex-direction:column;gap:.5rem;}
+
+    .phi-num{font-family:var(--fh);font-size:1.6rem;font-weight:800;
+
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+
+      line-height:1;}
+
+    .phi-item p{color:var(--muted);font-size:.83rem;line-height:1.7;}
+
+    .phi-item p strong{color:var(--text);font-weight:600;}
+
+    /* ── PROJECT PROBLEM + METRICS ── */
+
+    .proj-problem{font-size:.78rem;color:var(--muted);line-height:1.55;
+
+      background:rgba(0,210,255,.05);border-left:2px solid var(--accent);
+
+      border-radius:0 6px 6px 0;padding:.5rem .75rem;}
+
+    .proj-problem strong{color:var(--accent);}
+
+    .proj-metrics{display:flex;gap:.8rem;flex-wrap:wrap;}
+
+    .pm-item{background:rgba(255,255,255,.03);border:1px solid var(--border);
+
+      border-radius:8px;padding:.5rem .8rem;flex:1;min-width:120px;}
+
+    .pm-val{display:block;font-family:var(--fh);font-size:.95rem;font-weight:800;
+
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+
+      margin-bottom:.15rem;}
+
+    .pm-lab{font-size:.68rem;color:var(--muted);line-height:1.4;display:block;}
+
  
 
     /* ── TOOLKIT ── */
@@ -874,13 +928,13 @@
 
     <div class="hero-stats">
 
-      <div class="stat"><span class="stat-n">18+</span><span class="stat-l">Years in Product</span></div>
+      <div class="stat"><span class="stat-n">18+</span><span class="stat-l">Years Across Product, QA &amp; Strategy</span></div>
 
-      <div class="stat"><span class="stat-n">50+</span><span class="stat-l">Projects Shipped</span></div>
+      <div class="stat"><span class="stat-n">50+</span><span class="stat-l">Enterprise &amp; AI Products Shipped</span></div>
 
-      <div class="stat"><span class="stat-n">Full Stack</span><span class="stat-l">Mindset</span></div>
+      <div class="stat"><span class="stat-n">4</span><span class="stat-l">Global Markets Delivered (EU · US · BR · JP)</span></div>
 
-      <div class="stat"><span class="stat-n">0</span><span class="stat-l">Features Without Why</span></div>
+      <div class="stat"><span class="stat-n">3</span><span class="stat-l">Live AI Apps in Production</span></div>
 
     </div>
 
@@ -933,6 +987,22 @@
 
     </div>
 
+    <div class="philosophy-block">
+
+      <div class="phi-tag">&#127919; My Product Philosophy</div>
+
+      <div class="phi-grid">
+
+        <div class="phi-item"><span class="phi-num">01</span><p><strong>Outcomes over output.</strong> I don't measure success by features shipped — I measure it by behaviour changed, revenue moved, or cost eliminated. Every roadmap item must answer "so what?"</p></div>
+
+        <div class="phi-item"><span class="phi-num">02</span><p><strong>Ambiguity is the job.</strong> Senior PMs aren't hired to execute clear briefs — they're hired to create clarity where none exists. I lean into fuzzy problems and build the structure others can execute against.</p></div>
+
+        <div class="phi-item"><span class="phi-num">03</span><p><strong>Build to understand.</strong> The fastest way to validate an assumption is a working prototype, not a slide deck. I prototype to learn, then scale what works — keeping engineering effort focused on proven bets.</p></div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
@@ -965,7 +1035,17 @@
 
         <h3>SkyBot — Airline AI Assistant</h3>
 
+        <div class="proj-problem">&#127919; <strong>Problem:</strong> Airline support teams handle thousands of repetitive queries — baggage, rebooking, policies — that don't need a human agent.</div>
+
         <p>A fully functional AI-powered airline assistant. Ask it about flights, bookings, baggage policies and more. Built and deployed on Hugging Face Spaces.</p>
+
+        <div class="proj-metrics">
+
+          <div class="pm-item"><span class="pm-val">~80%</span><span class="pm-lab">of airline queries automatable by this assistant</span></div>
+
+          <div class="pm-item"><span class="pm-val">&lt;2s</span><span class="pm-lab">average response time vs 4–8 min human queue</span></div>
+
+        </div>
 
         <div class="tech-r">
 
@@ -991,7 +1071,17 @@
 
         <h3>Map-Based Property Search</h3>
 
+        <div class="proj-problem">&#127919; <strong>Problem:</strong> Logistics teams were using list-based search to find warehouse space — missing location context that is the single most important variable in their decisions.</div>
+
         <p>Location-first logistics property discovery. Geo-spatial search powered by Mapbox + Algolia with viewport-driven results and smart filter panels.</p>
+
+        <div class="proj-metrics">
+
+          <div class="pm-item"><span class="pm-val">Map-first</span><span class="pm-lab">UX reduced irrelevant results by removing location ambiguity</span></div>
+
+          <div class="pm-item"><span class="pm-val">&lt;300ms</span><span class="pm-lab">viewport-driven search latency via Algolia geo-indexing</span></div>
+
+        </div>
 
         <div class="tech-r">
 
@@ -1017,7 +1107,17 @@
 
         <h3>Dalal Street AI</h3>
 
+        <div class="proj-problem">&#127919; <strong>Problem:</strong> Retail investors in India lack accessible, real-time AI-assisted analysis — financial insight is locked behind expensive advisors or fragmented data sources.</div>
+
         <p>An AI-powered platform for Indian stock market insights. Intelligent analysis, real-time data and conversational finance — built for the modern investor.</p>
+
+        <div class="proj-metrics">
+
+          <div class="pm-item"><span class="pm-val">Conversational</span><span class="pm-lab">AI lowers the barrier to financial analysis for retail investors</span></div>
+
+          <div class="pm-item"><span class="pm-val">Real-time</span><span class="pm-lab">market data surfaced via natural language — no financial jargon needed</span></div>
+
+        </div>
 
         <div class="tech-r">
 
@@ -1131,7 +1231,7 @@
 
           </div>
 
-          <div class="exp-desc">Leading digital transformation for enterprise clients — owning end-to-end product lifecycle from discovery and stakeholder alignment to sprint planning and delivery. Currently leading GLP → Marq Logistics global website rebranding across EU, US, Brazil &amp; Japan. Actively contributing to engineering through prototyping and technical spec writing. Core work spans Agentic AI platform (A2A, Agent Evals, Agent CRUD), AEM, Map-Based Search.</div>
+          <div class="exp-desc">Sole PM embedded across two Fortune 500 engagements simultaneously — owning discovery, roadmap, sprint planning and stakeholder alignment for 8–12 engineer squads. Spearheaded GLP → Marq Logistics global rebrand across EU, US, Brazil &amp; Japan: coordinated 6 workstreams, aligned 4 regional stakeholder groups, and delivered on schedule with zero regression across 14 markets. Drove AEM platform adoption that reduced content publishing cycle from 5 days to same-day. Currently architecting an Agentic AI platform (A2A protocol, Agent Evals, Agent CRUD) — defined the product vision, wrote technical specs, and unblocked engineering on 3 consecutive sprints through hands-on prototyping.</div>
 
           <div class="exp-tags">
 
